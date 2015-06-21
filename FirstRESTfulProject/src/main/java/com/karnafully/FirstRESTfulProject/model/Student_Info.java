@@ -1,5 +1,8 @@
 package com.karnafully.FirstRESTfulProject.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Student_Info {
 
 	private int rollNo;

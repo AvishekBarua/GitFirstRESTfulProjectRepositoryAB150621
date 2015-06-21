@@ -1,22 +1,20 @@
 package com.karnafully.FirstRESTfulProject.resources;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import com.karnafully.FirstRESTfulProject.database.DatabaseClass;
+import javax.ws.rs.core.MediaType;
+
 import com.karnafully.FirstRESTfulProject.model.Student_Info;
+import com.karnafully.FirstRESTfulProject.service.StudentService;
 
+@Path("/students")
 public class StudentResource {
 	
-	private Map<Integer, Student_Info> students = DatabaseClass.getAllStudents(); 
+	StudentService service = new StudentService();
 	
-	
-	public List<Student_Info> getAllStudents() {
-		return new ArrayList<Student_Info>(students.values());
-	}
-	
-	public Student_Info getStudent(Integer id) {
-		return students.get(id);
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Student_Info> GetStudentInfo(){
+		return service.getAllStudents();
 	}
 }
