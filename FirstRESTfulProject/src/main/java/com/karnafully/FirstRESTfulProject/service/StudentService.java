@@ -1,4 +1,4 @@
-package com.karnafully.FirstRESTfulProject.resources;
+package com.karnafully.FirstRESTfulProject.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.Map;
 import com.karnafully.FirstRESTfulProject.database.DatabaseClass;
 import com.karnafully.FirstRESTfulProject.model.Student_Info;
 
-public class StudentResource {
+public class StudentService {
 	
 	private Map<Integer, Student_Info> students = DatabaseClass.getAllStudents(); 
 	
